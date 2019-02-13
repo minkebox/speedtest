@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Speed Test Stats</title>
+    <!-- css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-daterangepicker/daterangepicker.css">
+
+    <!-- js -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <script src="node_modules/moment/min/moment-with-locales.min.js"></script>
+    <script src="node_modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="node_modules/papaparse/papaparse.min.js"></script>
+
+    <!-- custom -->
+    <script type="text/javascript" src="js/appConfig.js"></script>
+    <script type="text/javascript" src="js/evaluation.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+</head>
+<body>
+
+<div class="card" style="border-bottom: 0;">
+    <div class="card-header">
+        Statistics
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">
+            <label for="daterange">Time Filter</label>
+        </h4>
+        <div class="form-group">
+            <input id="daterange" type="text" class="form-control" name="daterange" />
+        </div>
+
+        <canvas id="speedChart"></canvas>
+    </div>
+    <div class="small text-right">
+        v1.2
+    </div>
+</div>
+</body>
+</html>
