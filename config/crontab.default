@@ -1,1 +1,1 @@
-10 * * * * /var/www/html/scripts/speedtest.js >/dev/null 2>&1
+0 * * * * /var/www/html/scripts/speedtest.js >/dev/null 2>&1
