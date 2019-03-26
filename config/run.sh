@@ -17,7 +17,7 @@ fi
 crontab /var/www/html/config/crontab
 
 echo "Run immediately"
-/var/www/html/scripts/speedtest.js &
+#/var/www/html/scripts/speedtest.js &
 
 echo "Starting Cronjob"
 crond -l 2 -f &
