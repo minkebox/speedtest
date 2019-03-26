@@ -1,6 +1,7 @@
-#! /bin/bash -x
+#! /bin/sh -x
+
 #!/usr/bin/env bash
-echo "Starting run.sh"
+echo "Starting run.sh (test)"
 
 cat /var/www/html/config/crontab.default > /var/www/html/config/crontab
 
