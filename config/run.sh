@@ -23,7 +23,7 @@ echo "Starting Cronjob"
 crond -l 2 -f &
 
 echo "Starting nginx"
-exec nginx -g "daemon off;"
+#exec nginx -g "daemon off;"
 
 sleep 100000d
 exit 0;
