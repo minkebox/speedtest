@@ -1,3 +1,4 @@
+#! /bin/bash -x
 #!/usr/bin/env bash
 echo "Starting run.sh"
 
@@ -23,4 +24,5 @@ crond -l 2 -f &
 echo "Starting nginx"
 exec nginx -g "daemon off;"
 
+sleep 100000d
 exit 0;
