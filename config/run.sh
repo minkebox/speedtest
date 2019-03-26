@@ -1,7 +1,5 @@
-#! /bin/sh -x
-
 #!/usr/bin/env bash
-echo "Starting run.sh (test)"
+echo "Starting run.sh"
 
 cat /var/www/html/config/crontab.default > /var/www/html/config/crontab
 
@@ -17,13 +15,12 @@ fi
 crontab /var/www/html/config/crontab
 
 echo "Run immediately"
-#/var/www/html/scripts/speedtest.js &
+/var/www/html/scripts/speedtest.js &
 
 echo "Starting Cronjob"
 crond -l 2 -f &
 
 echo "Starting nginx"
-#exec nginx -g "daemon off;"
+exec nginx -g "daemon off;"
 
-sleep 100000d
 exit 0;
