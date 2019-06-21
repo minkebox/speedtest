@@ -17,8 +17,10 @@ crontab /var/www/html/config/crontab
 echo "Run immediately"
 /var/www/html/scripts/speedtest.js &
 
-echo "Starting Cronjob"
-crond -l 2 -f &
+if [ "${CRONJOB_RUN}" != "false" ]; then
+    echo "Starting Cronjob"
+    crond -l 2 -f &
+fi
 
 echo "Starting nginx"
 exec nginx -g "daemon off;"
