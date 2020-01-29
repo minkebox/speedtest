@@ -20,6 +20,7 @@ RUN mkdir -p /etc/nginx
 RUN mkdir -p /run/nginx
 RUN mkdir -p /etc/nginx/global
 RUN mkdir -p /var/www/html
+RUN mkdir -p /minkebox
 
 # touch required files
 RUN touch /var/log/nginx/access.log && touch /var/log/nginx/error.log
@@ -29,6 +30,9 @@ ADD ./config/vhost.conf /etc/nginx/conf.d/default.conf
 
 # install webroot files
 ADD ./ /var/www/html/
+
+# Skeleton
+ADD ./minkebox/skeleton /minkebox
 
 # To handle 'not get uid/gid'
 RUN npm config set unsafe-perm true
