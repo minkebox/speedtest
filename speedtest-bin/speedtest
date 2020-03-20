@@ -14,4 +14,6 @@ dl=$(echo "scale = 2; $(echo $results | cut -d'#' -f6) / $adjust" | bc)
 ul=$(echo "scale = 2; $(echo $results | cut -d'#' -f7) / $adjust" | bc)
 
 echo "$(date +%s)000,$ping,$dl,$ul"
-echo "$(date +%s)000,$ping,$dl,$ul" >> /var/www/html/data/result.csv
+if [ "$ping" != "" -a "$dl" != "" -a "$ul" != "" ]; then
+  echo "$(date +%s)000,$ping,$dl,$ul" >> /var/www/html/data/result.csv
+fi
