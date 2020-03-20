@@ -26,6 +26,7 @@ ADD ./config/vhost.conf /etc/nginx/conf.d/default.conf
 
 # install webroot files
 ADD ./ /var/www/html/
+RUN chmod 777 /var/www/html/speedtest-bin/*
 
 # Skeleton
 ADD ./minkebox/skeleton /minkebox
