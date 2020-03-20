@@ -1,0 +1,17 @@
+#! /bin/sh
+
+if [ "${SERVER_ID}" != "" ]; then
+  server="--server-id=${SERVER_ID}"
+fi
+results=$($0.$(arch) --accept-gdpr --accept-license --format=csv $server 2> /dev/null)
+#results='"Comcast - San Francisco, CA","1783","3.588","0.289","N/A","235006925","118351903","1732673084","462514865","https://www.speedtest.net/result/c/3bb17d5a-85e6-4877-b3a8-60881c9722fe"'
+results=$(echo $results | sed 's/","/#/g')
+# timestamp(ms),ping(ms),download(mb),upload(mb)
+
+adjust=131072 # Bps to mbps
+ping=$(echo $results | cut -d'#' -f3)
+dl=$(echo "scale = 2; $(echo $results | cut -d'#' -f6) / $adjust" | bc)
+ul=$(echo "scale = 2; $(echo $results | cut -d'#' -f7) / $adjust" | bc)
+
+echo "$(date +%s)000,$ping,$dl,$ul"
+echo "$(date +%s)000,$ping,$dl,$ul" >> /var/www/html/data/result.csv

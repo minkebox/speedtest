@@ -15,7 +15,7 @@ fi
 crontab /var/www/html/config/crontab
 
 echo "Run immediately"
-/var/www/html/scripts/speedtest.js &
+/var/www/html/speedtest-bin/speedtest &
 
 if [ "${CRONJOB_RUN}" != "false" ]; then
     echo "Starting Cronjob"

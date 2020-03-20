@@ -1,12 +1,8 @@
 FROM alpine:latest
 
-# greet me :)
-MAINTAINER Tobias Rös - <roes@amicaldo.de>
-
 # install dependencies
 RUN apk update && apk add \
   bash \
-  git \
   nodejs \
   nodejs-npm \
   nginx
@@ -39,12 +35,6 @@ RUN npm config set unsafe-perm true
 
 # install bower dependencies
 RUN npm install -g yarn && cd /var/www/html/ && yarn install
-
-# install speedtest-net
-RUN npm install -g https://github.com/aanon4/speedtest.net.git
-
-# run first speedtest
-# RUN cd /var/www/html/scripts && ./speedtest.js
 
 EXPOSE 80
 EXPOSE 443
