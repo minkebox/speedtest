@@ -70,6 +70,7 @@ moment@moment/moment#^2.19.3:
   version "2.24.0"
   resolved "https://codeload.github.com/moment/moment/tar.gz/96d0d6791ab495859d09a868803d31a55c917de1"
 
-papaparse@mholt/PapaParse#^4.3.6:
-  version "4.6.3"
-  resolved "https://codeload.github.com/mholt/PapaParse/tar.gz/8b663aa17edbc375eb942c60999aa957c14effd2"
+papaparse@mholt/PapaParse#^5.2.0:
+  version "5.2.0"
+  uid "8414f7645aa761857ab959438b0c2a70ad683162"
+  resolved "https://codeload.github.com/mholt/PapaParse/tar.gz/8414f7645aa761857ab959438b0c2a70ad683162"
