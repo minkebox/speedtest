@@ -99,8 +99,8 @@
           const v = input.split(',');
           document.getElementById("{{ID}}_t").innerText = new Date(parseInt(v[0])).toLocaleTimeString();
           document.getElementById("{{ID}}_p").firstElementChild.innerText = parseFloat(v[1]) + " ms";
-          document.getElementById("{{ID}}_d").firstElementChild.innerText = parseFloat(parseFloat(v[2]).toFixed(1)).toLocaleString() + " Mbps";
-          document.getElementById("{{ID}}_u").firstElementChild.innerText = parseFloat(parseFloat(v[3]).toFixed(1)).toLocaleString() + " Mbps";
+          document.getElementById("{{ID}}_d").firstElementChild.innerText = parseFloat(parseFloat(v[2]).toFixed(1)).toLocaleString() + " Mb/s";
+          document.getElementById("{{ID}}_u").firstElementChild.innerText = parseFloat(parseFloat(v[3]).toFixed(1)).toLocaleString() + " Mb/s";
         });
       </script>`
   }
