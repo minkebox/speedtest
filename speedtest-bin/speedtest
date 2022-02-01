@@ -1,6 +1,6 @@
 #! /bin/sh
 
-if [ "${SERVER_ID}" != "" ]; then
+if [ "${SERVER_ID}" != "" -a "${SERVER_ID}" != "0" ]; then
   server="--server-id=${SERVER_ID}"
 fi
 results=$($0.$(arch) --accept-gdpr --accept-license --format=csv $server 2> /dev/null)
